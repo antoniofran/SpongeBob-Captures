@@ -400,7 +400,7 @@
 					<div id="mainImageGallery">';
 
 						for ($i = $firstImgIndex; ($i < $imageCount) && ($i <= $lastImgIndex); $i++) {
-							echo '<a href="#" class="galleryItem"><img onclick="showImage(this,\'previewImage\');" src="'.$imageList[$i].'" alt="'.str_pad(strval($i + 1), strlen($imageCount), "0", STR_PAD_LEFT).'"><p><span onclick="showImage(this,\'replaceImage\');">replace</span>&nbsp;&bull;&nbsp;<span onclick="showImage(this,\'removeImage\');">remove</span></p></a>';
+							echo '<a href="#" class="galleryItem"><img src="'.$imageList[$i].'" alt="'.str_pad(strval($i + 1), strlen($imageCount), "0", STR_PAD_LEFT).'" onclick="showImage(this.parentElement,\'previewImage\');"><p><span onclick="showImage(this,\'replaceImage\');">replace</span>&nbsp;&bull;&nbsp;<span onclick="showImage(this,\'removeImage\');">remove</span></p></a>';
 						}
 
 						echo '

@@ -216,7 +216,7 @@
 
 						$imageList[$i] = $newImagePath;
 
-						echo '<li><a href="'.$imageList[$i].'" download="'.$downloadJpgName.'">'.$downloadJpgName.'</a></li>';
+						echo '<li><a class="imgWdth'.getimagesize($imageList[$i])[0].'" href="'.$imageList[$i].'" download="'.$downloadJpgName.'">'.$downloadJpgName.'</a></li>';
 					}
 
 					echo '

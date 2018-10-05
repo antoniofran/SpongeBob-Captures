@@ -78,15 +78,24 @@ function fillPreviewArea() {
 	switch (actionGlobalVar) {
 		case "launchSlideshow": currentPreviwAreaTitle = "Image slideshow"; break;
 		case "previewImage": currentPreviwAreaTitle = "Image slideshow"; break;
-		case "replaceImage": currentPreviwAreaTitle = "Click on image to replace it ..."; break;
-		case "removeImage": currentPreviwAreaTitle = "Click on image to remove it ..."; break;
+		case "replaceImage": currentPreviwAreaTitle = "Image replacing"; break;
+		case "removeImage": currentPreviwAreaTitle = "Image removing"; break;
+	}
+
+	//get currentImageHeight
+
+	var currentImageHeight = null;
+
+	switch (listOfImages[0].className) {
+		case "imgWdth512": currentImageHeight = "356.25px"; break;
+		case "imgWdth682": currentImageHeight = "267.44px"; break;
 	}
 
 	//preparing previewArea
 
 	previewAreaPrevLink.style.visibility = "hidden";
 
-	previewAreaImageContainer.innerHTML = '<p style="margin-bottom: 5px;">' + currentPreviwAreaTitle + '</p><img src="images/icons/Preloader.gif" alt="preloader" id="preloaderImage">';
+	previewAreaImageContainer.innerHTML = '<p style="margin-bottom: 5px;">' + currentPreviwAreaTitle + '</p><div height="' + currentImageHeight + '"><img src="images/icons/Preloader.gif" alt="preloader" id="preloaderImage"></div>';
 
 	previewAreaNextLink.style.visibility = "hidden";
 

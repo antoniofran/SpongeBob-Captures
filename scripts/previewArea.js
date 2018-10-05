@@ -91,11 +91,13 @@ function fillPreviewArea() {
 		case "imgWdth682": currentImageHeight = "267.44px"; break;
 	}
 
+	var preLoaderCode = '<table style="height:initial;"><tr><td style="text-align:center;vertical-align:middle;height:' + currentImageHeight + '"><img src="images/icons/Preloader.gif" alt="preloader" id="preloaderImage"></td></tr></table>';
+
 	//preparing previewArea
 
 	previewAreaPrevLink.style.visibility = "hidden";
 
-	previewAreaImageContainer.innerHTML = '<p style="margin-bottom: 5px;">' + currentPreviwAreaTitle + '</p><div height="' + currentImageHeight + '"><img src="images/icons/Preloader.gif" alt="preloader" id="preloaderImage"></div>';
+	previewAreaImageContainer.innerHTML = '<p style="margin-bottom: 5px;">' + currentPreviwAreaTitle + '</p>' + preLoaderCode;
 
 	previewAreaNextLink.style.visibility = "hidden";
 

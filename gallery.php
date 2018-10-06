@@ -100,7 +100,7 @@
 
 	/**** Image size ****/
 
-	$imageSize = getimagesize($imageList[$i]);
+	$imageSize = getimagesize('images/cards/'.$contentType.'/'.$currProdCode.' - '.$currCapturesTitle.'.jpg');
 
 	$imageWidth = $imageSize[0];
 

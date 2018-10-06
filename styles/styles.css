@@ -479,7 +479,7 @@ body {
 
 /* image width */
 
-.imgWdth512 img, .imgWdth514 img {
+.imgWdth510 img, .imgWdth512 img {
 	width:150px;
 	height:113px;
 }

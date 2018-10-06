@@ -98,6 +98,15 @@
 	$pageCount = ceil( (double)$imageCount / $imgPerPageNum );
 
 
+	/**** Image size ****/
+
+	$imageSize = getimagesize($imageList[$i]);
+
+	$imageWidth = $imageSize[0];
+
+	$imageHeight = $imageSize[1];
+
+
 	/**** Image indexes ****/
 
 	$lastImgIndex = $currPageNum * $imgPerPageNum - 1; //default: 79
@@ -134,6 +143,8 @@
 		case 'Glove World RIP': $currSpongeBobTitle = 'Glove World R.I.P.'; break;
 		case 'Seance Shmeance': $currSpongeBobTitle = 'Séance Shméance'; break;
 		case 'What\'s Eating Patrick': $currSpongeBobTitle = 'What\'s Eating Patrick?'; break;
+		case 'Goodbye, Krabby Patty': $currSpongeBobTitle = 'Goodbye, Krabby Patty?'; break;
+		case 'Sportz': $currSpongeBobTitle = 'Sportz?'; break;
 		case 'The SpongeBob Movie - Sponge Out of Water': $currSpongeBobTitle = 'The SpongeBob Movie: Sponge Out of Water'; break;
 		default: $currSpongeBobTitle = $currCapturesTitle; break;
 	}
@@ -216,7 +227,7 @@
 
 						$imageList[$i] = $newImagePath;
 
-						echo '<li><a class="imgWdth'.getimagesize($imageList[$i])[0].'" href="'.$imageList[$i].'" download="'.$downloadJpgName.'">'.$downloadJpgName.'</a></li>';
+						echo '<li><a class="imgWdth'.$imageWidth.'" href="'.$imageList[$i].'" download="'.$downloadJpgName.'">'.$downloadJpgName.'</a></li>';
 					}
 
 					echo '
@@ -312,7 +323,7 @@
 										echo '<li><a href="http://spongebob.wikia.com/wiki/'.str_replace(' ','_',$currSpongeBobTitle).'/gallery">ESB Page</a></li>';
 										break;
 									default:
-										echo '<li><a href="http://spongebob.wikia.com/wiki/'.str_replace(' ','_',$currSpongeBobTitle).'_(gallery)">ESB Page</a></li>';
+										echo '<li><a href="http://spongebob.wikia.com/wiki/'.str_replace(' ','_',$currSpongeBobTitle).'/gallery">ESB Page</a></li>';
 										break;
 								}
 
@@ -400,7 +411,7 @@
 					<div id="mainImageGallery">';
 
 						for ($i = $firstImgIndex; ($i < $imageCount) && ($i <= $lastImgIndex); $i++) {
-							echo '<a href="#" class="galleryItem"><img src="'.$imageList[$i].'" alt="'.str_pad(strval($i + 1), strlen($imageCount), "0", STR_PAD_LEFT).'" onclick="showImage(this.parentElement,\'previewImage\');"><p><span onclick="showImage(this,\'replaceImage\');">replace</span>&nbsp;&bull;&nbsp;<span onclick="showImage(this,\'removeImage\');">remove</span></p></a>';
+							echo '<a href="#" class="galleryItem imgWdth'.$imageWidth.'"><img src="'.$imageList[$i].'" alt="'.str_pad(strval($i + 1), strlen($imageCount), "0", STR_PAD_LEFT).'" onclick="showImage(this.parentElement,\'previewImage\');"><p><span onclick="showImage(this,\'replaceImage\');">replace</span>&nbsp;&bull;&nbsp;<span onclick="showImage(this,\'removeImage\');">remove</span></p></a>';
 						}
 
 						echo '

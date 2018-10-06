@@ -88,6 +88,8 @@ function fillPreviewArea() {
 
 	switch (listOfImages[0].className) {
 		case "imgWdth512": currentImageHeight = "356.25px"; break;
+		case "imgWdth514": currentImageHeight = "356.25px"; break;
+		case "imgWdth680": currentImageHeight = "267.44px"; break;
 		case "imgWdth682": currentImageHeight = "267.44px"; break;
 	}
 

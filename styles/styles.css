@@ -453,10 +453,6 @@ body {
 	font-weight: bold;
 }
 
-#mainImageGallery .galleryItem img {
-	width:150px;
-}
-
 #mainImageGallery .galleryItem p {
 	display: block;
 	width: 150px;
@@ -479,6 +475,18 @@ body {
 	border-radius: 5px;
 	padding: 1px;
 	background: #fbba03;
+}
+
+/* image width */
+
+.imgWdth512 img, .imgWdth514 img {
+	width:150px;
+	height:113px;
+}
+
+.imgWdth680 img, .imgWdth682 img {
+	width:150px;
+	height:85px;
 }
 
 /* directoryList */

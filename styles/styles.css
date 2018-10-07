@@ -169,7 +169,7 @@ body {
 	margin: 3px 9px 3px 3px;
 }
 
-.visibilityTabs > section a:hover img {
+.visibilityTabs > section a:hover .timelyFormat img {
 	border-radius: 5px;
 	border: 2px solid black;
 	padding: 1px;
@@ -202,6 +202,7 @@ body {
 .visibilityTabs > section a:hover img.holder {
 	visibility: visible;
 	border: 2px solid transparent;
+	border-radius: 5px;
 }
 
 .visibilityTabs > section a:hover img.titlecard {
@@ -224,7 +225,7 @@ body {
 	left: 0px;
 	width: 150px;
 	height: 113px;
-	background: #fbba03;
+	background: #cbcbcb;
 }
 
 .visibilityTabs > section a .PreLoadOld img {
@@ -249,7 +250,7 @@ body {
 	left: 0px;
 	width: 150px;
 	height: 85px;
-	background: #fbba03;
+	background: #cbcbcb;
 }
 
 .visibilityTabs > section a .PreLoadNew img {
@@ -282,6 +283,10 @@ body {
 	text-overflow: ellipsis;
 }
 
+.visibilityTabs > section a:hover p {
+	padding: 2px 0 0 3px;
+}
+
 @media print {
 	.visibilityTabsInt {
 		display: none !important;
@@ -294,6 +299,38 @@ body {
 		border: none;
 		display: block;
 	}
+}
+
+/* current gallerLink format*/
+
+.galleryLink .earlyFormat {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 150px;
+	height: 113px;
+	border-radius: 5px;
+}
+
+.galleryLink .earlyFormat img {
+	position: relative;
+	display: inline;
+	width: 150px;
+	height: 85px;
+	top: 14px;
+}
+
+.galleryLink:hover .earlyFormat {
+	border: 2px solid black;
+	padding: 1px;
+}
+
+.galleryLink:hover .earlyFormat img.titlecard {
+	margin: -1px 0 0 -1px;
+}
+
+.galleryLink:hover .earlyFormat img.preview {
+	padding: 1px;
 }
 
 /* mainGalleryNavigation */
@@ -357,7 +394,7 @@ body {
 #galleryOreview img {
 	float: right;
 	margin: 15px;
-	border-radius: 10px;
+	border-radius: 5px;
 	border: 2px solid black;
 }
 
@@ -475,6 +512,10 @@ body {
 	border-radius: 5px;
 	padding: 1px;
 	background: #fbba03;
+}
+
+#mainImageGallery .galleryItem:hover p {
+	padding: 0 0 0 3px;
 }
 
 /* image width */

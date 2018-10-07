@@ -1,20 +1,55 @@
 ﻿<?php
 
+$currTabCount = 12;
+
 if ( isset($_GET['tabnum']) ) {
-	$currTabNumber = $_GET['tabnum'];
+	$currTabNumber = intval($_GET['tabnum']);
 } else {
-	$currTabNumber = '1';
+	$currTabNumber = 1;
 }
 
-function list_item_code($currScreenFormat, $currProdCode, $currCapturesTitle, $currSpongeBobTitle) {
+function tab_list_code ($currTabNumber, $currTabCount) {
+
+	$currTabSelected = array_fill(1, $currTabCount, '');
+
+	$currTabSelected[$currTabNumber] = ' class="selected"';
+
+	echo '
+					<div class="visibilityTabsInt">
+						<a href="?tabnum=1"'.$currTabSelected[1].'>Season 1</a>
+						<a href="?tabnum=2"'.$currTabSelected[2].'>2</a>
+						<a href="?tabnum=3"'.$currTabSelected[3].'>3</a>
+						<a href="?tabnum=4"'.$currTabSelected[4].'>4</a>
+						<a href="?tabnum=5"'.$currTabSelected[5].'>5</a>
+						<a href="?tabnum=6"'.$currTabSelected[6].'>6</a>
+						<a href="?tabnum=7"'.$currTabSelected[7].'>7</a>
+						<a href="?tabnum=8"'.$currTabSelected[8].'>8</a>
+						<a href="?tabnum=9"'.$currTabSelected[9].'>9</a>
+						<a href="?tabnum=10"'.$currTabSelected[10].'>10</a>
+						<a href="?tabnum=11"'.$currTabSelected[11].'>11</a>
+						<a href="?tabnum=12"'.$currTabSelected[12].'>Movies</a>
+					</div>
+	';
+
+}
+
+function list_item_code($currScreenFormat, $currProdCode, $currCapturesTitle, $currSpongeBobTitle, $isEarlyFormat = false) {
+
+	$currContentType = ($currProdCode[0] === 'M') ? 'movies' : 'episodes';
+
+	$currImageHeight = ($currScreenFormat === 'Old') ? '113' : '85';
+
+	$currImageHeightEarly = ($isEarlyFormat) ? '85' : $currImageHeight;
+
+	$currFormatClass = ($isEarlyFormat) ? 'earlyFormat' : 'timelyFormat';
 
 	echo '
 							<li>
 								<a class="galleryLink" href="gallery.php?prod='.$currProdCode.'&page=1&limit=60">
-									<img class="holder" src="images/none/PreLoad'.$currScreenFormat.'.jpg" width="150" height="'.(($currScreenFormat === 'Old') ? '113' : '85').'">
-									<img class="titlecard" src="images/cards/'.($currProdCode[0] === 'M' ? 'movies' : 'episodes').'/'.$currProdCode.' - '.$currCapturesTitle.'.jpg" width="150" height="'.(($currScreenFormat === 'Old') ? '113' : '85').'">
+									<img class="holder" src="images/none/PreLoad'.$currScreenFormat.'.jpg" width="150" height="'.$currImageHeight.'">
+									<div class="'.$currFormatClass.'"><img class="titlecard" src="images/cards/'.$currContentType.'/'.$currProdCode.' - '.$currCapturesTitle.'.jpg" width="150" height="'.$currImageHeightEarly.'"></div>
 									<div class="PreLoad'.$currScreenFormat.'"><img class="preloader" src="images/icons/Preloader.gif" width="64" height="64"></div>
-									<img class="preview" src="images/prevs/'.($currProdCode[0] === 'M' ? 'movies' : 'episodes').'/'.$currProdCode.' - '.$currCapturesTitle.'.gif" width="150" height="'.(($currScreenFormat === 'Old') ? '113' : '85').'">
+									<div class="'.$currFormatClass.'"><img class="preview" src="images/prevs/'.$currContentType.'/'.$currProdCode.' - '.$currCapturesTitle.'.gif" width="150" height="'.$currImageHeightEarly.'"></div>
 									<p>'.$currProdCode.' - '.$currSpongeBobTitle.'</p>
 								</a>
 							</li>
@@ -54,24 +89,11 @@ echo '
 				<div class="visibilityTabs">
 ';
 
-if ($currTabNumber === '1') {
+if ($currTabNumber === 1) {
+
+					tab_list_code($currTabNumber, $currTabCount);
 
 	echo '
-					<div class="visibilityTabsInt">
-						<a href="?tabnum=1" class="selected">Season 1</a>
-						<a href="?tabnum=2">2</a>
-						<a href="?tabnum=3">3</a>
-						<a href="?tabnum=4">4</a>
-						<a href="?tabnum=5">5</a>
-						<a href="?tabnum=6">6</a>
-						<a href="?tabnum=7">7</a>
-						<a href="?tabnum=8">8</a>
-						<a href="?tabnum=9">9</a>
-						<a href="?tabnum=10">10</a>
-						<a href="?tabnum=11">11</a>
-						<a href="?tabnum=12">Movies</a>
-					</div>
-
 					<section class="visibilityTabsSection">
 						<ul>
 	';
@@ -123,24 +145,11 @@ if ($currTabNumber === '1') {
 					</section>
 	';
 
-} else if ($currTabNumber === '2') {
+} else if ($currTabNumber === 2) {
+
+					tab_list_code($currTabNumber, $currTabCount);
 
 	echo '
-					<div class="visibilityTabsInt">
-						<a href="?tabnum=1">Season 1</a>
-						<a href="?tabnum=2" class="selected">2</a>
-						<a href="?tabnum=3">3</a>
-						<a href="?tabnum=4">4</a>
-						<a href="?tabnum=5">5</a>
-						<a href="?tabnum=6">6</a>
-						<a href="?tabnum=7">7</a>
-						<a href="?tabnum=8">8</a>
-						<a href="?tabnum=9">9</a>
-						<a href="?tabnum=10">10</a>
-						<a href="?tabnum=11">11</a>
-						<a href="?tabnum=12">Movies</a>
-					</div>
-
 					<section class="visibilityTabsSection">
 						<ul>
 	';
@@ -190,24 +199,11 @@ if ($currTabNumber === '1') {
 					</section>
 	';
 
-} else if ($currTabNumber === '3') {
+} else if ($currTabNumber === 3) {
+
+					tab_list_code($currTabNumber, $currTabCount);
 
 	echo '
-					<div class="visibilityTabsInt">
-						<a href="?tabnum=1">Season 1</a>
-						<a href="?tabnum=2">2</a>
-						<a href="?tabnum=3" class="selected">3</a>
-						<a href="?tabnum=4">4</a>
-						<a href="?tabnum=5">5</a>
-						<a href="?tabnum=6">6</a>
-						<a href="?tabnum=7">7</a>
-						<a href="?tabnum=8">8</a>
-						<a href="?tabnum=9">9</a>
-						<a href="?tabnum=10">10</a>
-						<a href="?tabnum=11">11</a>
-						<a href="?tabnum=12">Movies</a>
-					</div>
-
 					<section class="visibilityTabsSection">
 						<ul>
 	';
@@ -255,24 +251,11 @@ if ($currTabNumber === '1') {
 					</section>
 	';
 
-} else if ($currTabNumber === '4') {
+} else if ($currTabNumber === 4) {
+
+					tab_list_code($currTabNumber, $currTabCount);
 
 	echo '
-					<div class="visibilityTabsInt">
-						<a href="?tabnum=1">Season 1</a>
-						<a href="?tabnum=2">2</a>
-						<a href="?tabnum=3">3</a>
-						<a href="?tabnum=4" class="selected">4</a>
-						<a href="?tabnum=5">5</a>
-						<a href="?tabnum=6">6</a>
-						<a href="?tabnum=7">7</a>
-						<a href="?tabnum=8">8</a>
-						<a href="?tabnum=9">9</a>
-						<a href="?tabnum=10">10</a>
-						<a href="?tabnum=11">11</a>
-						<a href="?tabnum=12">Movies</a>
-					</div>
-
 					<section class="visibilityTabsSection">
 						<ul>
 	';
@@ -321,24 +304,11 @@ if ($currTabNumber === '1') {
 					</section>
 	';
 
-} else if ($currTabNumber === '5') {
+} else if ($currTabNumber === 5) {
+
+					tab_list_code($currTabNumber, $currTabCount);
 
 	echo '
-					<div class="visibilityTabsInt">
-						<a href="?tabnum=1">Season 1</a>
-						<a href="?tabnum=2">2</a>
-						<a href="?tabnum=3">3</a>
-						<a href="?tabnum=4">4</a>
-						<a href="?tabnum=5" class="selected">5</a>
-						<a href="?tabnum=6">6</a>
-						<a href="?tabnum=7">7</a>
-						<a href="?tabnum=8">8</a>
-						<a href="?tabnum=9">9</a>
-						<a href="?tabnum=10">10</a>
-						<a href="?tabnum=11">11</a>
-						<a href="?tabnum=12">Movies</a>
-					</div>
-
 					<section class="visibilityTabsSection">
 						<ul>
 	';
@@ -390,24 +360,11 @@ if ($currTabNumber === '1') {
 					</section>
 	';
 
-} else if ($currTabNumber === '6') {
+} else if ($currTabNumber === 6) {
+
+					tab_list_code($currTabNumber, $currTabCount);
 
 	echo '
-					<div class="visibilityTabsInt">
-						<a href="?tabnum=1">Season 1</a>
-						<a href="?tabnum=2">2</a>
-						<a href="?tabnum=3">3</a>
-						<a href="?tabnum=4">4</a>
-						<a href="?tabnum=5">5</a>
-						<a href="?tabnum=6" class="selected">6</a>
-						<a href="?tabnum=7">7</a>
-						<a href="?tabnum=8">8</a>
-						<a href="?tabnum=9">9</a>
-						<a href="?tabnum=10">10</a>
-						<a href="?tabnum=11">11</a>
-						<a href="?tabnum=12">Movies</a>
-					</div>
-
 					<section class="visibilityTabsSection">
 						<ul>
 	';
@@ -455,7 +412,7 @@ if ($currTabNumber === '1') {
 							list_item_code('Old', '121b', 'Shell Shocked', 'Shell Shocked');
 							list_item_code('Old', '122a', 'Chum Bucket Supreme', 'Chum Bucket Supreme');
 							list_item_code('Old', '122b', 'Single Cell Anniversary', 'Single Cell Anniversary');
-							list_item_code('New', '123-124', 'Truth or Square', 'Truth or Square');
+							list_item_code('Old', '123-124', 'Truth or Square', 'Truth or Square', true);
 							list_item_code('Old', '125a', 'Pineapple Fever', 'Pineapple Fever');
 							list_item_code('Old', '125b', 'Chum Caverns', 'Chum Caverns');
 							list_item_code('Old', '126', 'The Clash of Triton', 'The Clash of Triton');
@@ -465,24 +422,11 @@ if ($currTabNumber === '1') {
 					</section>
 	';
 
-} else if ($currTabNumber === '7') {
+} else if ($currTabNumber === 7) {
+
+					tab_list_code($currTabNumber, $currTabCount);
 
 	echo '
-					<div class="visibilityTabsInt">
-						<a href="?tabnum=1">Season 1</a>
-						<a href="?tabnum=2">2</a>
-						<a href="?tabnum=3">3</a>
-						<a href="?tabnum=4">4</a>
-						<a href="?tabnum=5">5</a>
-						<a href="?tabnum=6">6</a>
-						<a href="?tabnum=7" class="selected">7</a>
-						<a href="?tabnum=8">8</a>
-						<a href="?tabnum=9">9</a>
-						<a href="?tabnum=10">10</a>
-						<a href="?tabnum=11">11</a>
-						<a href="?tabnum=12">Movies</a>
-					</div>
-
 					<section class="visibilityTabsSection">
 						<ul>
 	';
@@ -543,24 +487,11 @@ if ($currTabNumber === '1') {
 					</section>
 	';
 
-} else if ($currTabNumber === '8') {
+} else if ($currTabNumber === 8) {
+
+					tab_list_code($currTabNumber, $currTabCount);
 
 	echo '
-					<div class="visibilityTabsInt">
-						<a href="?tabnum=1">Season 1</a>
-						<a href="?tabnum=2">2</a>
-						<a href="?tabnum=3">3</a>
-						<a href="?tabnum=4">4</a>
-						<a href="?tabnum=5">5</a>
-						<a href="?tabnum=6">6</a>
-						<a href="?tabnum=7">7</a>
-						<a href="?tabnum=8" class="selected">8</a>
-						<a href="?tabnum=9">9</a>
-						<a href="?tabnum=10">10</a>
-						<a href="?tabnum=11">11</a>
-						<a href="?tabnum=12">Movies</a>
-					</div>
-
 					<section class="visibilityTabsSection">
 						<ul>
 	';
@@ -606,7 +537,7 @@ if ($currTabNumber === '1') {
 							list_item_code('Old', '173b', 'Demolition Doofus', 'Demolition Doofus');
 							list_item_code('Old', '174a', 'Treats!', 'Treats!');
 							list_item_code('Old', '174b', 'For Here or to Go', 'For Here or to Go');
-							list_item_code('New', '175', 'It\'s a SpongeBob Christmas!', 'It\'s a SpongeBob Christmas!');
+							list_item_code('Old', '175', 'It\'s a SpongeBob Christmas!', 'It\'s a SpongeBob Christmas!', true);
 							list_item_code('Old', '176a', 'Super Evil Aquatic Villain Team Up is Go!', 'Super Evil Aquatic Villain Team Up is Go!');
 							list_item_code('Old', '176b', 'Chum Fricassee', 'Chum Fricassee');
 							list_item_code('Old', '177a', 'The Good Krabby Name', 'The Good Krabby Name');
@@ -618,24 +549,11 @@ if ($currTabNumber === '1') {
 					</section>
 	';
 
-} else if ($currTabNumber === '9') {
+} else if ($currTabNumber === 9) {
+
+					tab_list_code($currTabNumber, $currTabCount);
 
 	echo '
-					<div class="visibilityTabsInt">
-						<a href="?tabnum=1">Season 1</a>
-						<a href="?tabnum=2">2</a>
-						<a href="?tabnum=3">3</a>
-						<a href="?tabnum=4">4</a>
-						<a href="?tabnum=5">5</a>
-						<a href="?tabnum=6">6</a>
-						<a href="?tabnum=7">7</a>
-						<a href="?tabnum=8">8</a>
-						<a href="?tabnum=9" class="selected">9</a>
-						<a href="?tabnum=10">10</a>
-						<a href="?tabnum=11">11</a>
-						<a href="?tabnum=12">Movies</a>
-					</div>
-
 					<section class="visibilityTabsSection">
 						<ul>
 	';
@@ -695,24 +613,11 @@ if ($currTabNumber === '1') {
 					</section>
 	';
 
-} else if ($currTabNumber === '10') {
+} else if ($currTabNumber === 10) {
+
+					tab_list_code($currTabNumber, $currTabCount);
 
 	echo '
-					<div class="visibilityTabsInt">
-						<a href="?tabnum=1">Season 1</a>
-						<a href="?tabnum=2">2</a>
-						<a href="?tabnum=3">3</a>
-						<a href="?tabnum=4">4</a>
-						<a href="?tabnum=5">5</a>
-						<a href="?tabnum=6">6</a>
-						<a href="?tabnum=7">7</a>
-						<a href="?tabnum=8">8</a>
-						<a href="?tabnum=9">9</a>
-						<a href="?tabnum=10" class="selected">10</a>
-						<a href="?tabnum=11">11</a>
-						<a href="?tabnum=12">Movies</a>
-					</div>
-
 					<section class="visibilityTabsSection">
 						<ul>
 	';
@@ -745,24 +650,11 @@ if ($currTabNumber === '1') {
 					</section>
 	';
 
-} else if ($currTabNumber === '11') {
+} else if ($currTabNumber === 11) {
+
+					tab_list_code($currTabNumber, $currTabCount);
 
 	echo '
-					<div class="visibilityTabsInt">
-						<a href="?tabnum=1">Season 1</a>
-						<a href="?tabnum=2">2</a>
-						<a href="?tabnum=3">3</a>
-						<a href="?tabnum=4">4</a>
-						<a href="?tabnum=5">5</a>
-						<a href="?tabnum=6">6</a>
-						<a href="?tabnum=7">7</a>
-						<a href="?tabnum=8">8</a>
-						<a href="?tabnum=9">9</a>
-						<a href="?tabnum=10">10</a>
-						<a href="?tabnum=11" class="selected">11</a>
-						<a href="?tabnum=12">Movies</a>
-					</div>
-
 					<section class="visibilityTabsSection">
 						<ul>
 	';
@@ -814,22 +706,9 @@ if ($currTabNumber === '1') {
 
 } else {
 
-	echo '
-					<div class="visibilityTabsInt">
-						<a href="?tabnum=1">Season 1</a>
-						<a href="?tabnum=2">2</a>
-						<a href="?tabnum=3">3</a>
-						<a href="?tabnum=4">4</a>
-						<a href="?tabnum=5">5</a>
-						<a href="?tabnum=6">6</a>
-						<a href="?tabnum=7">7</a>
-						<a href="?tabnum=8">8</a>
-						<a href="?tabnum=9">9</a>
-						<a href="?tabnum=10">10</a>
-						<a href="?tabnum=11">11</a>
-						<a href="?tabnum=12" class="selected">Movies</a>
-					</div>
+					tab_list_code($currTabNumber, $currTabCount);
 
+	echo '
 					<section class="visibilityTabsSection">
 						<ul>
 	';

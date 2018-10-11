@@ -265,7 +265,10 @@ body {
 
 .galleryLink .earlyFormat img {
 	position: relative;
-	top: 14px;
+	width: 150px;
+	height: 85px;
+	top: 50%;
+	margin-top: -42.5px;
 }
 
 .galleryLink:hover .earlyFormat {
@@ -275,7 +278,7 @@ body {
 
 .galleryLink:hover .earlyFormat img {
 	border-radius: initial;
-	margin: -3px 0 0 -3px;
+	margin: -45.5px 0 0 -3px;
 }
 
 /* mainGalleryNavigation */
@@ -717,7 +720,7 @@ body {
 
 #previewAreaImageContainer #preloaderImage {
 	width: 64px;
-	height: auto;
+	height: 64px;
 }
 
 #previewAreaImageContainer img {

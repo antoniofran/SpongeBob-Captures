@@ -169,9 +169,8 @@ body {
 	margin: 3px 9px 3px 3px;
 }
 
-.visibilityTabs > section a:hover .timelyFormat img {
+.visibilityTabs > section a:hover img {
 	border-radius: 5px;
-	border: 2px solid black;
 	padding: 1px;
 }
 
@@ -181,89 +180,59 @@ body {
 	visibility: visible;
 }
 
-.visibilityTabs > section a img.titlecard {
+.visibilityTabs > section a .titlecard img {
 	z-index: 200;
 	position: absolute;
 	visibility: visible;
 }
 
-.visibilityTabs > section a img.preloader {
+.visibilityTabs > section a .preloader img {
 	z-index: 300;
 	position: absolute;
 	visibility: hidden;
 }
 
-.visibilityTabs > section a img.preview {
+.visibilityTabs > section a .preview img {
 	z-index: 400;
 	position: absolute;
 	visibility: hidden;
 }
 
-.visibilityTabs > section a:hover img.holder {
+.visibilityTabs > section a:hover img {
 	visibility: visible;
 	border: 2px solid transparent;
 	border-radius: 5px;
 }
 
-.visibilityTabs > section a:hover img.titlecard {
-	visibility: visible;
-	border: 2px solid transparent;
+.visibilityTabs > section a:hover img.holder {
+	border: 2px solid black;
+	background: #fbba03;
 }
 
-.visibilityTabs > section a:hover img.preloader {
-	visibility: visible;
-	border: 2px solid transparent;
-}
-
-.visibilityTabs > section a:hover img.preview {
-	visibility: visible;
+.visibilityTabs > section a .preloader {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 150px;
 }
 
 .visibilityTabs > section a .PreLoadOld {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 150px;
 	height: 113px;
-	background: #cbcbcb;
-}
-
-.visibilityTabs > section a .PreLoadOld img {
-	display: inline;
-	width: 64px;
-	height: 64px;
-	top: 50%;
-	left: 50%;
-	margin-top: -36px;
-	margin-left: -32px;
-}
-
-.visibilityTabs > section a:hover .PreLoadOld {
-	border-radius: 5px;
-	border: 2px solid transparent;
-	padding: 1px;
 }
 
 .visibilityTabs > section a .PreLoadNew {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 150px;
 	height: 85px;
-	background: #cbcbcb;
 }
 
-.visibilityTabs > section a .PreLoadNew img {
-	display: inline;
+.visibilityTabs > section a .preloader img {
+	position: relative;
 	width: 64px;
 	height: 64px;
 	top: 50%;
-	left: 50%;
-	margin-top: -36px;
-	margin-left: -32px;
+	margin-top: -35px;
 }
 
-.visibilityTabs > section a:hover .PreLoadNew {
+.visibilityTabs > section a:hover .preloader {
 	border-radius: 5px;
 	border: 2px solid transparent;
 	padding: 1px;
@@ -284,7 +253,7 @@ body {
 }
 
 .visibilityTabs > section a:hover p {
-	padding: 2px 0 0 3px;
+	padding-left: 3px;
 }
 
 @media print {
@@ -303,34 +272,10 @@ body {
 
 /* current gallerLink format*/
 
-.galleryLink .earlyFormat {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 150px;
-	height: 113px;
-	border-radius: 5px;
-}
-
 .galleryLink .earlyFormat img {
 	position: relative;
-	display: inline;
-	width: 150px;
 	height: 85px;
 	top: 14px;
-}
-
-.galleryLink:hover .earlyFormat {
-	border: 2px solid black;
-	padding: 1px;
-}
-
-.galleryLink:hover .earlyFormat img.titlecard {
-	margin: -1px 0 0 -1px;
-}
-
-.galleryLink:hover .earlyFormat img.preview {
-	padding: 1px;
 }
 
 /* mainGalleryNavigation */
@@ -515,7 +460,7 @@ body {
 }
 
 #mainImageGallery .galleryItem:hover p {
-	padding: 0 0 0 3px;
+	padding-left: 3px;
 }
 
 /* image width */
@@ -772,7 +717,7 @@ body {
 }
 
 #previewAreaImageContainer #preloaderImage {
-	width: 60px;
+	width: 64px;
 	height: auto;
 }
 

@@ -47,9 +47,9 @@ function list_item_code($currScreenFormat, $currProdCode, $currCapturesTitle, $c
 							<li>
 								<a class="galleryLink" href="gallery.php?prod='.$currProdCode.'&page=1&limit=60">
 									<img class="holder" src="images/none/PreLoad'.$currScreenFormat.'.jpg" width="150" height="'.$currImageHeight.'">
-									<div class="'.$currFormatClass.'"><img class="titlecard" src="images/cards/'.$currContentType.'/'.$currProdCode.' - '.$currCapturesTitle.'.jpg" width="150" height="'.$currImageHeightEarly.'"></div>
-									<div class="PreLoad'.$currScreenFormat.'"><img class="preloader" src="images/icons/Preloader.gif" width="64" height="64"></div>
-									<div class="'.$currFormatClass.'"><img class="preview" src="images/prevs/'.$currContentType.'/'.$currProdCode.' - '.$currCapturesTitle.'.gif" width="150" height="'.$currImageHeightEarly.'"></div>
+									<div class="titlecard '.$currFormatClass.'"><img src="images/cards/'.$currContentType.'/'.$currProdCode.' - '.$currCapturesTitle.'.jpg" width="150" height="'.$currImageHeightEarly.'"></div>
+									<div class="preloader PreLoad'.$currScreenFormat.'"><img src="images/icons/Preloader.gif" width="64" height="64"></div>
+									<div class="preview '.$currFormatClass.'"><img src="images/prevs/'.$currContentType.'/'.$currProdCode.' - '.$currCapturesTitle.'.gif" width="150" height="'.$currImageHeightEarly.'"></div>
 									<p>'.$currProdCode.' - '.$currSpongeBobTitle.'</p>
 								</a>
 							</li>

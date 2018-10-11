@@ -173,27 +173,30 @@ body {
 	padding: 1px;
 }
 
+.visibilityTabs > section a div {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 150px;
+}
+
 .visibilityTabs > section a img.holder {
 	z-index: 100;
-	position: relative;
 	visibility: visible;
 }
 
-.visibilityTabs > section a .titlecard img {
+.visibilityTabs > section a div.titlecard {
 	z-index: 200;
-	position: absolute;
 	visibility: visible;
 }
 
-.visibilityTabs > section a .preloader img {
+.visibilityTabs > section a div.preloader {
 	z-index: 300;
-	position: absolute;
 	visibility: hidden;
 }
 
-.visibilityTabs > section a .preview img {
+.visibilityTabs > section a div.preview {
 	z-index: 400;
-	position: absolute;
 	visibility: hidden;
 }
 
@@ -206,13 +209,6 @@ body {
 .visibilityTabs > section a:hover img.holder {
 	border: 2px solid black;
 	background: #fbba03;
-}
-
-.visibilityTabs > section a .preloader {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 150px;
 }
 
 .visibilityTabs > section a .PreLoadOld {
@@ -271,13 +267,25 @@ body {
 
 /* current gallerLink format*/
 
+.galleryLink .earlyFormat {
+	width: 150px;
+	height: 113px;
+	/*background: black;*/
+}
+
 .galleryLink .earlyFormat img {
 	position: relative;
 	top: 14px;
 }
 
+.galleryLink:hover .earlyFormat {
+	border-radius: 2px;
+	margin: 3px 0 0 3px;
+}
+
 .galleryLink:hover .earlyFormat img {
 	border-radius: initial;
+	margin: -3px 0 0 -3px;
 }
 
 /* mainGalleryNavigation */

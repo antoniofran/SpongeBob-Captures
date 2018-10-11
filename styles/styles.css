@@ -157,6 +157,13 @@ body {
 	text-align: center;
 }
 
+.visibilityTabs > section a div {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 150px;
+}
+
 .visibilityTabs > section a img {
 	position: relative;
 	top: 0px;
@@ -166,18 +173,6 @@ body {
 
 .visibilityTabs > section a:hover {
 	margin: 3px 9px 3px 3px;
-}
-
-.visibilityTabs > section a:hover img {
-	border-radius: 5px;
-	padding: 1px;
-}
-
-.visibilityTabs > section a div {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 150px;
 }
 
 .visibilityTabs > section a img.holder {
@@ -195,6 +190,22 @@ body {
 	visibility: hidden;
 }
 
+.visibilityTabs > section a div.PreLoadOld {
+	height: 113px;
+}
+
+.visibilityTabs > section a div.PreLoadNew {
+	height: 85px;
+}
+
+.visibilityTabs > section a div.preloader img {
+	position: relative;
+	width: 64px;
+	height: 64px;
+	top: 50%;
+	margin-top: -35px;
+}
+
 .visibilityTabs > section a div.preview {
 	z-index: 400;
 	visibility: hidden;
@@ -204,6 +215,7 @@ body {
 	visibility: visible;
 	border: 2px solid transparent;
 	border-radius: 5px;
+	padding: 1px;
 }
 
 .visibilityTabs > section a:hover img.holder {
@@ -211,23 +223,7 @@ body {
 	background: #fbba03;
 }
 
-.visibilityTabs > section a .PreLoadOld {
-	height: 113px;
-}
-
-.visibilityTabs > section a .PreLoadNew {
-	height: 85px;
-}
-
-.visibilityTabs > section a .preloader img {
-	position: relative;
-	width: 64px;
-	height: 64px;
-	top: 50%;
-	margin-top: -35px;
-}
-
-.visibilityTabs > section a:hover .preloader {
+.visibilityTabs > section a:hover div.preloader {
 	border-radius: 5px;
 	border: 2px solid transparent;
 	padding: 1px;

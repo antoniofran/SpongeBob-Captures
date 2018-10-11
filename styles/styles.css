@@ -203,7 +203,7 @@ body {
 	width: 64px;
 	height: 64px;
 	top: 50%;
-	margin-top: -35px;
+	margin-top: -32px;
 }
 
 .visibilityTabs > section a div.preview {
@@ -221,12 +221,6 @@ body {
 .visibilityTabs > section a:hover img.holder {
 	border: 2px solid black;
 	background: #fbba03;
-}
-
-.visibilityTabs > section a:hover div.preloader {
-	border-radius: 5px;
-	border: 2px solid transparent;
-	padding: 1px;
 }
 
 .visibilityTabs > section a p {
@@ -458,7 +452,6 @@ body {
 }
 
 #mainImageGallery .galleryItem:hover img {
-	border-radius: 5px;
 	border: 2px solid black;
 	border-radius: 5px;
 	padding: 1px;

@@ -278,6 +278,10 @@ body {
 	top: 14px;
 }
 
+.galleryLink:hover .earlyFormat img {
+	border-radius: initial;
+}
+
 /* mainGalleryNavigation */
 
 #mainGalleryNavigation table {

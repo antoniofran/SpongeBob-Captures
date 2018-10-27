@@ -698,6 +698,8 @@ if ($currTabNumber === 1) {
 							list_item_code('New', '234b', 'ChefBob', 'ChefBob');
 							list_item_code('New', '235a', 'Plankton Paranoia', 'Plankton Paranoia');
 							list_item_code('New', '235b', 'Library Cards', 'Library Cards');
+							list_item_code('New', '239a', 'The Grill is Gone', 'The Grill is Gone');
+							list_item_code('New', '239b', 'The Night Patty', 'The Night Patty');
 
 	echo '
 						</ul>

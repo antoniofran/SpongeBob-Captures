@@ -75,6 +75,23 @@ echo '
 
 		<main id="mainContent">
 
+			<section id="donationForUpKeep" style="width: 664px; margin: 24px auto;">
+				<div style="float: left; width: 510px;">
+					<span style="font-size: 16px;">SpongeBob Captures website needs a donation for the upkeep.<br>If you are willing to donate, it would be much appreciated.</span>
+				</div>
+				<div style="float: left; width: 154px;">
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<input type="hidden" name="cmd" value="_donations" />
+						<input type="hidden" name="business" value="spongebobcaptures@gmail.com" />
+						<input type="hidden" name="item_name" value="SpongeBob Captures upkeep" />
+						<input type="hidden" name="currency_code" value="USD" />
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+						<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+					</form>
+				</div>
+				<div style="clear: both;"></div>
+			</section>
+
 			<header id="logoAndInfo">
 				<div id="logoContainer" onclick="openRandomGallery();">
 					<img src="images/logos/Logo.png" width="450" alt="logo">
@@ -700,8 +717,17 @@ if ($currTabNumber === 1) {
 							list_item_code('New', '234b', 'ChefBob');
 							list_item_code('New', '235a', 'Plankton Paranoia');
 							list_item_code('New', '235b', 'Library Cards');
+							list_item_code('New', '236a', 'Call the Cops');
+							list_item_code('New', '236b', 'Surf N\' Turf');
+							list_item_code('New', '237', 'Goons on the Moon');
+							list_item_code('New', '238a', 'Appointment TV');
+							list_item_code('New', '238b', 'Karen\'s Virus');
 							list_item_code('New', '239a', 'The Grill is Gone');
 							list_item_code('New', '239b', 'The Night Patty');
+							list_item_code('New', '240a', 'Bubbletown');
+							list_item_code('New', '240b', 'Girls\' Night Out');
+							list_item_code('New', '241a', 'Squirrel Jelly');
+							list_item_code('New', '241b', 'The String');
 
 	echo '
 						</ul>
